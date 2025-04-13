@@ -1,0 +1,27 @@
+roject:
+  name: animal-clef-2025
+  experiment_name: baseline-exp1
+  seed: 42
+
+data:
+  root: ./data
+  csv_path: ./data/metadata.csv
+  image_dir: ./data/images
+  img_size: 224
+  batch_size: 32
+  num_workers: 4
+  split: database
+
+model:
+  name: resnet50
+  pretrained: true
+  num_classes: 500  # 替换成实际类别数
+
+train:
+  epochs: 20
+  lr: 1e-4
+  optimizer: adam
+  weight_decay: 0.01
+
+logging:
+  use_mlflow: true
